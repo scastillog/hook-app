@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import UseState from './pages/UseState/UseState';
+import UseForm from './pages/UseForm/UseForm';
 import './index.css';
 
 ReactDOM.render(
@@ -12,6 +13,7 @@ ReactDOM.render(
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/use-state" element={<UseState />} />
+        <Route path="/use-form" element={<UseForm />} />
       </Routes>
     </Router>
   </React.StrictMode>,

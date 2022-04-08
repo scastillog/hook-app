@@ -14,6 +14,9 @@ const Home = () => {
           <li>
             <Link to="/use-state">Learn about useState</Link>
           </li>
+          <li>
+            <Link to="/use-form">Learn useState with a Form</Link>
+          </li>
         </ul>
       </header>
     </div>

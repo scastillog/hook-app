@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 // el useNavigate se utiliza para redireccionar a otro componente. maneja la navegación.
 import { useNavigate } from 'react-router-dom';
+import './UseForm.css';
 
 const UseForm = () => {
   // guardamos la referencia con inputRef para poder dar foco en el input.
@@ -78,29 +79,31 @@ const UseForm = () => {
         <div className="col-md-3">
           <filedset>
             <legend>Eres desarrollador de software</legend>
-            <label htmlFor="ratioOne">
-              <input type="radio" name="developer" value="no" onChange={handleRadioCheck} />
+            <label htmlFor="ratioNo">
+              <input type="radio" name="developer" value="no" onChange={handleRadioCheck} id="ratioNo" />
               NO
             </label>
-            <label htmlFor="ratioOne">
-              <input type="radio" name="developer" value="si" onChange={handleRadioCheck} />
+            <label htmlFor="ratioSi">
+              <input type="radio" name="developer" value="si" onChange={handleRadioCheck} id="ratioSi" />
               SI
             </label>
           </filedset>
         </div>
-        <div className="col-md-3">
-          <label htmlFor="lenguaje">
-            Seleccione el lenguaje en el cual programas:
-            <select name="lenguaje" onChange={handleSelect}>
-              <option selected value="">
-                seleccione su lenguaje
-              </option>
-              <option value="js">Javascript</option>
-              <option value="py">python</option>
-              <option value="rb">ruby</option>
-            </select>
-          </label>
-        </div>
+        {state.programador && (
+          <div className="col-md-3">
+            <label htmlFor="lenguaje">
+              Seleccione el lenguaje en el cual programas:
+              <select name="lenguaje" onChange={handleSelect} className={state.lenguaje === 'js' && 'errorPrueba'}>
+                <option selected value="">
+                  seleccione su lenguaje
+                </option>
+                <option value="js">Javascript</option>
+                <option value="py">python</option>
+                <option value="rb">ruby</option>
+              </select>
+            </label>
+          </div>
+        )}
         <div>
           <button type="submit" className="btn btn-primary">
             Enviar

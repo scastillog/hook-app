@@ -6,13 +6,14 @@ import logo from '../../assets/logo.svg';
 import './Home.css';
 
 const Home = () => {
-  const context = useContext(FormContext);
+  const { state } = useContext(FormContext);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Welcome to Hooks App</p>
-        <p>bienvenido {context.state}</p>
+        <p>Bienvenido {state}</p>
         <ul>
           <li>
             <Link to="/use-state">Learn about useState</Link>
